@@ -1,0 +1,5 @@
+- Pré-processador de css: no fim todo código gerado será transformado para css puro.
+- Extensões do cess, trazer novas funcionalidades ao css.
+- Scss: semelhante ao CSS(usa chaves e ponto e virgula), qualquer css válido é scss válido.
+-Sass: usa recuo como o python e não utiliza chaves, ponto e virgula, o código css não pode ser usado como Sass.
+- pode facilmente converter o SCSS para o Sass e vice-versa com a ferramenta sass-convert
