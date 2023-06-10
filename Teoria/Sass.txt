@@ -4,3 +4,13 @@
 -Sass: usa recuo como o python e não utiliza chaves, ponto e virgula, o código css não pode ser usado como Sass.
 - pode facilmente converter o SCSS para o Sass e vice-versa com a ferramenta sass-convert
 -> O Sass aceita sixtaxe de Scss.
+
+-> Tipos de comentário:
+  -> // : Não é incluso no css;(aparece apenas no sass)
+  -> /* : Incluso no css
+  -> /*! : Incluso no css, até no modo de compressão
+  -> Podemos interpolar valores nos comentários. Ex: #{1 + 3} -> vai se impresso no arquivo css 4
+
+-> Minificando Sass(economiza espaço, o arquivo de css fica menor)
+  - Gerar css minificado com o interpretador, na saída:
+  - De: styles.css   Para: styles.min.css

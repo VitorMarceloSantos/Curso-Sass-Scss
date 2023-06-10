@@ -1,0 +1,36 @@
+// Declarando variáveis ->necessita do ponto e virgula
+
+$bg-color: #EEE;
+$title-background: #333;
+$main-color: #FFF;
+
+$color-text-1: #8aa;
+$color-text-2: #345;
+
+.container {
+  background-color: $bg-color;
+  padding: 20px;
+
+  // title alinhado dentro do container
+  #title {
+    background-color: $title-background;
+    color: $main-color;
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+.container-text {
+  background-color: gray;
+  padding: 30px;
+
+  .color-1 {
+    color: $color-text-1;
+    text-align: center;
+  }
+
+  .color-2 {
+    color: $color-text-2;
+    text-align: justify;
+  }
+}
