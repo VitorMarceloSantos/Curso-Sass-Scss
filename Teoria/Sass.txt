@@ -5,6 +5,20 @@
 - pode facilmente converter o SCSS para o Sass e vice-versa com a ferramenta sass-convert
 -> O Sass aceita sixtaxe de Scss.
 
+-> Variáveis:
+  - salvar um valor na memoria do computador
+  - utiliza o símbolo $ para declarar um variável
+  - normalmente os nomes compostos são separados por hífen($criando-variavel)
+  -AS VARIÁVEIS(GLOBAL) DECLARADAS FORA DO BLOCO, PODEM SER ACESSADAS EM QUALQUER BLOCO
+  - VARIÁVEIS(LOCAL) DECLARADA DENTRO DE UM BLOCO, SÓ PODERÁ SER UTILIZADA DENTRO DO BLOCO
+  - shadowing: permite que duas variáveis tenha o mesmo nome, sendo uma local e outra local -> no bloco em que a variável é declarada prevalece a local
+
+-> Módulo de Variáveis: externalizar as variáveis em um arquivo
+  - criar as variáveis em um documento separada e utilizar o @import
+
+-> Interpolação: substituir valores de forma dinâmica, utiliza a sinstaxe #{valor}
+  - pode ser utilizado em variáveis
+
 -> Tipos de comentário:
   -> // : Não é incluso no css;(aparece apenas no sass)
   -> /* : Incluso no css
@@ -14,3 +28,23 @@
 -> Minificando Sass(economiza espaço, o arquivo de css fica menor)
   - Gerar css minificado com o interpretador, na saída:
   - De: styles.css   Para: styles.min.css
+
+-> Nesting: aninhamento dos seletores.
+  -Sass: não precisa colocar ponto e virgula, não necessita de chaves.
+
+-> Lista ustilizando Nesting:
+  - Separado por virgula, o sass vai entender que queremos separar mais de um elemento seguindo o padrão de aninhmaento.
+
+-> Combinators com Nesting:
+  -(+, >, ~)
+  - > : descendência, todos os elementos descendentes dos pai vão ter aquele estilo
+
+-> Parent Selector: serve para se referir ao elemento pai/ referenciar(pai) o nome de uma classe/id
+  - utiliza o &
+
+-> Seletor de Placeholder: estender alguma outra classe(atribuindo um extend, ou seja, estamos transferindo os estilos para este elemento). Cria um estilo padrão que será herdado por outros elementos.
+  - utilza o %
+
+-> Partials: criar um arquivo e invocar o mesmo em um outro arquivo( igual os componentes do react)
+  - os nomes dos arquivos começam com underline(_buttos.sass)
+  - a importação é realizada pelo @import (na importação pode desconsiderar o underline do nome do arquivo)
