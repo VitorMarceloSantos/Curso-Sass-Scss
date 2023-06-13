@@ -48,3 +48,13 @@
 -> Partials: criar um arquivo e invocar o mesmo em um outro arquivo( igual os componentes do react)
   - os nomes dos arquivos começam com underline(_buttos.sass)
   - a importação é realizada pelo @import (na importação pode desconsiderar o underline do nome do arquivo)
+
+-> Mixins: são como funções, podemos definir um codigo que poderá ser reutilizado ao longo do projeto.
+  - sintaxe: 
+    @mixin nome
+      regras
+  - podemos criar um arquivo com mixins, e importar ele no projeto principal
+  - Os mixins podem receber argumentos...
+    @mixin nome($variavel1, $variavel2, ...)
+      regras
+  - Os mixins aceita um parametro pré-definido(default), esses argumentos DEVEM FICAR DEPOIS DOS PARÂMETROS OBRIGATÓRIOS. Caso os parâmetros default receberem algum valor ao chamar a função, é atribuido esse valor na função. O parâmetro default somente vai ser utilizado quando ao chamar a função não passar o valor do parâmetro, correspondente aquela variável.

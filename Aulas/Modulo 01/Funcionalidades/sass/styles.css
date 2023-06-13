@@ -8,4 +8,92 @@
 
 body {
   margin: 20px;
+}
+
+.p-esp {
+  color: red;
+  background-color: yellow;
+  padding: 10px;
+  border: 1px solid red;
+}
+.p-esp:hover {
+  cursor: pointer;
+  border-block-color: blue;
+  color: blue;
+}
+
+h2 {
+  color: red;
+  background-color: yellow;
+  padding: 10px;
+  border: 1px solid red;
+  border-color: green;
+  color: green;
+}
+h2:hover {
+  cursor: pointer;
+  border-block-color: blue;
+  color: blue;
+}
+
+.esp-menor {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid black;
+  color: red;
+}
+
+.esp-medio {
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid black;
+  color: blue;
+}
+
+.esp-maior {
+  padding: 30px;
+  margin: 15px;
+  border: 1px solid black;
+  color: green;
+}
+
+.esp-extra-grande {
+  padding: 50px;
+  margin: 25px;
+  border: 1px solid black;
+  color: orange;
+}
+
+.par-default-1 {
+  background-color: blue;
+  color: pink;
+  padding: 20px;
+  border: 1px solid green;
+  margin: 5px;
+}
+.par-default-1 > p {
+  text-align: center;
+}
+
+.par-default-2 {
+  background-color: blue;
+  color: red;
+  padding: 20px;
+  border: 1px solid green;
+  margin: 5px;
+}
+.par-default-2 > p {
+  text-align: right;
+}
+
+.par-default-3 {
+  background-color: yellow;
+  color: green;
+  padding: 20px;
+  border: 1px solid green;
+  margin: 5px;
+}
+.par-default-3 > p {
+  font-size: 1.5em;
+  text-align: center;
 }/*# sourceMappingURL=styles.css.map */

@@ -4,9 +4,60 @@
 // Duas formas de realizar a importação
 // @import 'variables'
 // @import 'buttons'
-
 // Ao realizar o @import mesmo o arquivo tendo somente as importações os estilos importados funcionam.
 // O styles.sass é um agregador de arquivos sass, é o arquivo que vai ser chamado para ser processador(é como se fosse um index).
 
+@import _mixins
+
 body
   margin: 20px
+
+// O mixin pode ser utilizado em qualquer lugar
+.p-esp
+  @include text-special
+
+h2
+  @include text-special
+  //Vai sobrescrever as propriedades do mixin text-special que são iguais, as que não são iguais, vai continuar(Exemplo: hover)
+  @include green
+
+// Para utilizar o mixin(parâmetro) é necessário que passe os parâmetros no formato correto 
+.esp-menor
+  @include spacing($pad: 10px, $mar: 5px)
+  color: red
+
+.esp-medio
+  @include spacing($pad: 20px, $mar: 10px)
+  color: blue
+
+.esp-maior
+  @include spacing($pad: 30px, $mar: 15px)
+  color: green
+
+.esp-extra-grande
+  // Passando como parâmetros, variáveis locais
+  $pad: 50px
+  $mar: 25px
+  @include spacing($pad, $mar)
+  color: orange
+
+//Parâmetros default
+.par-default-1
+  @include colors($text: pink)
+  // pegando os elementos p filhos da classe par-default-1
+  >p
+    text-align: center
+
+.par-default-2
+  @include colors($text: red)
+  // pegando os elementos p filhos da classe par-default-2
+  >p
+    text-align: right
+
+//Substituindo o parâmetro $back que está com valor default
+.par-default-3
+  @include colors($text: green, $back: yellow)
+  // pegando os elementos p filhos da classe par-default-3
+  >p
+    font-size: 1.5em
+    text-align: center

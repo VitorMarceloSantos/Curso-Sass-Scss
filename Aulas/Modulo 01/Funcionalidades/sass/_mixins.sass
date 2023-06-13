@@ -1,0 +1,32 @@
+//Criando um mixin 
+@mixin text-special
+  color: red
+  background-color: yellow
+  padding: 10px
+  border: 1px solid red
+
+  &:hover
+    cursor: pointer
+    border-block-color: blue
+    color: blue
+
+//Mixin estático
+@mixin green
+  border-color: green
+  color: green
+
+//Mixin dinâmico
+@mixin spacing($pad, $mar)
+  padding: $pad
+  margin: $mar
+  border: 1px solid black
+
+//Mixin com parâmetro opcional, o parâmetro já vem como default
+//Os parâmetros opcionais(default) devem ficar a direita dos parâmetros que recebem valor(obrigatorios)
+//Se ao chamar a função passar algum parâmetro que é opcional(default), o parâmetro será opcional será substituido pelo parâmetro recebido
+@mixin colors($text, $back: blue, $border: green)
+  background-color: $back
+  color: $text
+  padding: 20px
+  border: 1px solid $border
+  margin: 5px
