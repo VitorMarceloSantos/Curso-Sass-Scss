@@ -1,0 +1,15 @@
+// Criando Funções
+// Valores default ficam a direita
+@function text-color($size, $pad: 5)
+  // as variáveis que não tem origem o parâmetro devem ser inicializadas
+  $color: #fff
+  //utilizando o debut, para saber o valor de size
+  @debug "Size: #{$size}"
+  @if ($size + $pad) <= 10
+    $color: red
+  @else if ($size + $pad) == 15
+    $color: green
+  @else
+    $color: blue
+
+  @return $color

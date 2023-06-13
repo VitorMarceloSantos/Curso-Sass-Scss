@@ -1,3 +1,5 @@
+@charset 'UTF-8'
+// configurando o texto para o formato utilizado no brasil
 // Primeiro faz as importaçãoes da variaveis globais
 @import _variables
 @import _buttons
@@ -8,6 +10,10 @@
 // O styles.sass é um agregador de arquivos sass, é o arquivo que vai ser chamado para ser processador(é como se fosse um index).
 
 @import _mixins
+// os placheholder(herança) estão no modulo plugins
+@import _plugins
+// importando funções
+@import _functions
 
 body
   margin: 20px
@@ -25,14 +31,20 @@ h2
 .esp-menor
   @include spacing($pad: 10px, $mar: 5px)
   color: red
+  //utilizando a herança(placeholder)
+  @extend %font-pattern
 
 .esp-medio
   @include spacing($pad: 20px, $mar: 10px)
   color: blue
+  //utilizando a herança(placeholder)
+  @extend %font-pattern
 
 .esp-maior
   @include spacing($pad: 30px, $mar: 15px)
   color: green
+  //utilizando a herança(placeholder)
+  @extend %font-pattern
 
 .esp-extra-grande
   // Passando como parâmetros, variáveis locais
@@ -40,6 +52,8 @@ h2
   $mar: 25px
   @include spacing($pad, $mar)
   color: orange
+  //utilizando a herança(placeholder)
+  @extend %font-pattern
 
 //Parâmetros default
 .par-default-1
@@ -61,3 +75,37 @@ h2
   >p
     font-size: 1.5em
     text-align: center
+
+.functions-1
+  // Utilizando funções
+  font-size: 20px
+  color: text-color($size: 5)
+
+.functions-2
+  // Utilizando funções
+  font-size: 25px
+  color: text-color($size: 10)
+
+.functions-3
+  // Utilizando funções
+  font-size: 30px
+  color: text-color($size: 15)
+
+//Utilizando estrutura de repetição Each
+@each $font in $fonts
+  .title-#{$font}
+    font-size: $font
+    line-height: $font * 1.2
+    
+//Utilizando estrutura de repetição For
+@for $i from 1 through 4
+  .p-#{$i}
+    font-size: $i * 20px
+    @if $i == 1
+      color: lightblue
+    @else if $i == 2
+      color: red
+    @else if $i == 3
+      color: green
+    @else 
+      color: pink

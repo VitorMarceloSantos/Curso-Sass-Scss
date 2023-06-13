@@ -42,8 +42,12 @@
 -> Parent Selector: serve para se referir ao elemento pai/ referenciar(pai) o nome de uma classe/id
   - utiliza o &
 
--> Seletor de Placeholder: estender alguma outra classe(atribuindo um extend, ou seja, estamos transferindo os estilos para este elemento). Cria um estilo padrão que será herdado por outros elementos.
+-> Seletor de Placeholder(herança): estender alguma outra classe(atribuindo um extend, ou seja, estamos transferindo os estilos para este elemento). Cria um estilo padrão que será herdado por outros elementos.
   - utilza o %
+  - sintaxe:
+    %nome
+      regras
+  - importaçao: @extend nome
 
 -> Partials: criar um arquivo e invocar o mesmo em um outro arquivo( igual os componentes do react)
   - os nomes dos arquivos começam com underline(_buttos.sass)
@@ -58,3 +62,34 @@
     @mixin nome($variavel1, $variavel2, ...)
       regras
   - Os mixins aceita um parametro pré-definido(default), esses argumentos DEVEM FICAR DEPOIS DOS PARÂMETROS OBRIGATÓRIOS. Caso os parâmetros default receberem algum valor ao chamar a função, é atribuido esse valor na função. O parâmetro default somente vai ser utilizado quando ao chamar a função não passar o valor do parâmetro, correspondente aquela variável.
+
+-> Pode ser realizado operações matemáticas no Sass, e o resultado será transferido para o css.
+  - Exemplo: width: (300px / 10px) + 5%
+  - Pode ser utilizado variaveis para efetuar o calculo:
+    - width: (300px / 10px) + $variavel
+
+-> Funções: parecem com os mixins, porém elas tem o papel de realizar operações.(exemplo: cálculos)
+  - definida pela sintaxe: @function nome(argumentos)
+  - possibilidade retornar valores com @return
+  - as funções aceita um parametro pré-definido(default), esses argumentos DEVEM FICAR DEPOIS DOS PARÂMETROS OBRIGATÓRIOS. Caso os parâmetros default receberem algum valor ao chamar a função, é atribuido esse valor na função. O parâmetro default somente vai ser utilizado quando ao chamar a função não passar o valor do parâmetro, correspondente aquela variável.
+
+-> É possivel gerar erros no Sass(o processamento é pausado), basta utilizar @error 'mensagem';
+-> Gerar aviso, é mostrado apenas no console(o processamento não é pausado), basta utilizar @warn 'aviso';
+-> Pode utilizar o @debug para verificar debugar o codigo, verificar algum valor de variavel, a mensagem sera impressa no console, basta utilizar @debug "O valor é de: #{$variavel}"
+
+->Condicionais:
+  - @if
+  - @else
+  - @else if
+
+-> Estruturas de repetição
+  - @each :estrutura de repetição em listas
+  - sintaxe: -> $sizes é a lista[array], $size corresponde a cada elemento dessa lista
+    @each $size in $sizes
+      código
+
+-> Estrutura de repetição
+  - @for :estrutura de repetição controlada(inicio e fim definidos pelo usuário)
+  - sinstaxe:
+    @for $i from 1 through 3(repetir de 1 até chegar no 3 incluso)
+      código
