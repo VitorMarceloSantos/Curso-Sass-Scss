@@ -1,0 +1,20 @@
+// Não utiliza o underline na importação do arquivo(Nome do arquivo)
+@use '../1-base/variables'
+#navbar
+  padding: 15px
+  border-bottom: 2px solid variables.$primary-color
+  margin-bottom: 15px
+
+  ul
+    display: flex
+    justify-content: flex-end
+
+    li
+      margin: 00 10px
+
+    a
+      color: variables.$primary-color
+      transition: .5s
+
+      &:hover
+        color: red

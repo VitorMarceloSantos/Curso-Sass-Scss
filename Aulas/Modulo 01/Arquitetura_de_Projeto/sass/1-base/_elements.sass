@@ -1,0 +1,29 @@
+// Definir os estilos dos elementos genericos
+// Deve realizar a importação do arquivo que contem as variaveis, utilizar a notação de objeto(variables.nome_da_variavel)
+@use 'variables' 
+*
+  padding: 0
+  margin: 0
+
+main
+  text-align: center
+
+body
+  background-color: variables.$bg-color
+
+h1, h2
+  color: variables.$primary-color
+  font-size: 2rem
+
+ul
+  list-style: none
+
+p
+  font-size: 16px
+  color: variables.$secondary-color
+
+a
+  text-decoration: none
+
+button
+  cursor: pointer
