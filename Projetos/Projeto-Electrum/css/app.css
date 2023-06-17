@@ -1,0 +1,19 @@
+/* Error: expected newline.
+ *    ,
+ * 22 |     color: variables: . $primary-color
+ *    |                     ^
+ *    '
+ *   sass/1-base/_reset.sass 22:21  @use
+ *   sass/1-base/base.sass 2:1      @use
+ *   sass/app.sass 3:1              root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: expected newline.\a    \2577 \a 22 \2502      color: variables: . $primary-color\a    \2502                      ^\a    \2575 \a   sass/1-base/_reset.sass 22:21  @use\a   sass/1-base/base.sass 2:1      @use\a   sass/app.sass 3:1              root stylesheet";
+}
