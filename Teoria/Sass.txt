@@ -93,3 +93,47 @@
   - sinstaxe:
     @for $i from 1 through 3(repetir de 1 até chegar no 3 incluso)
       código
+
+-> A diretiva @use é semelhante ao @import, porém mais nova e performática. Sempre será a primeira regra do arquivo.
+->IMPORTANTE: AO IMPORTAR ARQUIVOS UTILIZAR O @USE
+
+IMPORTANTE : ARQUITETURA
+  -> SMACSS é a arquitetura Sass, nesse padrão o css é dividido em partes:
+    - base: regras básicas de estilo, elementos gerais
+    - layout: elementos que foram a página, exemplo: header
+    - module: componentes menores
+    -state, theme: regas que sobrepõe outras e cores do tema
+
+  -> O arquivo principal vai apenas fazer as importações: main.sass ou app.sass
+  -> Estrutura das pastas:
+    0-plugins: Frameworks ou códigos de terceiro
+    1-base: Arquivos de estilo base(gerais)
+    2-layouts: Arquivos para elementos que formam o layout da página(específicos, classe, id)
+    3-modules: Componentes das páginas
+  -> Cada pasta, vai ter ser arquivo principal.Exemplo: 0-plugins/plugins.sass. O arquivo principal de cada pastar, vai realizar somente  a importação de arquivos relacionada ao seu modulo.
+
+
+->Tipos de Dados
+  - Números: são compostos duas partes- numero e unidade. Exemplo: 100%     (Exemplo: -100 numero - % unidade)
+  - Strings: são inseridas entre aspas e tambem sem aspas, pode interpolar valores em string(#{}), pode concatenar string com +;
+  - Listas: são arrays, são valores separados por virgula(Exemplo: $arr: 1, 2, 3).  Utiliza estrutura de repetição para interar na lista(each/for)
+  - Maps: são objetos, declarados entre parenteses e cada item precisa de chave e valor. Exemplo: $usuario('nome': 'Vitor', 'idade': 31) -> para resgatar algum valor do map, utiliza o metodo map.get(variavel, chave)
+  - Boolean: true e false
+  - Igualdade/diferença: == / !=
+  - Maior/Menor: < / >
+  - Operadores Matematicos: +, -, *, /, %(resto)
+
+-> IMPORTANTE: QUANDO FOR NOMEAR AS CLASSES APROVEITAR O NOME DOS ELEMENTOS SUPERIORES PARA UTILIZAR O PARENT SELECT(&)
+  <header class="header">
+    <div class="header-top">
+      <div class="header-top-container">
+       ...
+      </div>
+    </div>
+    <div class="header-bottom">
+      ...
+    </div>
+  </header>
+  .header
+  .&-top-container
+  .&-bottom
