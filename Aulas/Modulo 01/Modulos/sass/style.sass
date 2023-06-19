@@ -1,0 +1,80 @@
+// Importando o modules color
+@use 'sass:color'
+//Importando o modules list
+@use 'sass:list'
+//Importando o modules map
+@use 'sass:map'
+//Importando o modules math
+@use 'sass:math'
+//Importando o modules string
+@use 'sass:string'
+
+$coloradjust: color.adjust(#6b716b, $red: 50) // ajustar a cor
+$coloradjust-2: color.adjust(#6b716b, $red: 25, $blue: 25)
+
+.color-1
+  color: $coloradjust
+  background-color: $coloradjust-2
+
+@debug  color.green($coloradjust)
+
+$color-scale: color.scale($coloradjust-2, $lightness: -40%) // Diminuindo a claridade
+$color-scale-2: color.scale($coloradjust-2, $lightness: 40%) // Aumentando a claridade
+
+.color-2
+  background-color: $color-scale
+  color: $color-scale-2
+
+.color-3
+  background-color: color.invert(($color-scale-2))
+
+//Color Mix: mistura cores
+// color.desaturate: remove uma quantidade x de saturação
+// color.lightn: deixa uma cor mais clara
+
+.color-4
+  background-color: color.mix(#123123, #4f2f3f)
+
+.color-5
+  background-color: desaturate(yellow, 60%)
+
+// Module List
+// list.append: adiciona um elemento a lista
+// list.index: retorna o indice do elemento
+// IMPORTANTE: A LISTA COMEÇA A SER CONTADA A PARTIR DE 1, E NÃO DE 0
+// list.join: une duas listas
+// list.length: retorna o tamanho de um lista
+// list.nth: retorna o enésimo elemento de uma lista 
+
+$array: 10px, 20px, 30px
+$array2: 5px, 15px, 25px
+list.append($array, 40px) // adicionando elemento a lista
+@debug list.index($array, 20px) // POSIÇÃO 2
+$array3: list.join($array, $array2)
+@debug list.length($array3)
+@debug list.nth($array3, 2) // retorna 20px(segundo elemento)
+
+// Module Map(objeto)
+// map.merge: une dois maps
+// map.get: retorna o valor de uma determinada chave
+// map.has-key: verifica se um map tem determinada chave -> retorna true/false
+
+$objeto1: ('fonte': 3px, 'color': blue)
+$objeto2: ('fonte2': 10px, 'color2': red)
+
+$objeto3: map.merge($objeto1, $objeto2)
+@debug map.get($objeto3, 'fonte')
+// @if map.has-key($objeto3, 'color') ....
+
+// Module Math
+// Acesso a funções que trabalham com operações matemáticas
+// math.$pi: valor de PI
+// math.ceil/floor: arredodamento para cima/baixo
+// math.max/min: maior/menor numero de uma lista
+// math.random: retornaum número aleatoria de 0 a 1
+
+// Module String
+// trabalha com textos
+// string.index: retorna o indice do elemento passado como parâmetro
+// string.length: retorna a quantidade de caracteres que a string possui
+// string.to-upper/lower-case: muda a string para letras maiúsculas/minúsculas
