@@ -6,4 +6,5 @@
 
 -> Utilizar a extensão Live Sass Compiler para realizar a conversão do arquivo sass para css automaticamente, e ficar realizando as modificações no arquivo a medida que escreve codigos sass. OBS: o arquivo css vai ser gerado na pasta onde estiver o arquivo styles.sass.
 -> Realizar a conversao de Sass para Css via linha de comando: sass sass/styles.sass css/styles.css   --Explicando: sass caminho_do_arquivo_sass destino_e_nome_do_arquivo_css
--> Continuar assistindo as modificações no arquivo: sass --watch sass/styles.sass:css/stules.css
+
+UTILIZAR ESSE COMANDO -> Continuar assistindo as modificações no arquivo: sass --watch sass/styles.sass:css/stules.css
