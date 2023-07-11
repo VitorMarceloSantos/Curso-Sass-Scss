@@ -11,7 +11,7 @@
   - normalmente os nomes compostos são separados por hífen($criando-variavel)
   -AS VARIÁVEIS(GLOBAL) DECLARADAS FORA DO BLOCO, PODEM SER ACESSADAS EM QUALQUER BLOCO
   - VARIÁVEIS(LOCAL) DECLARADA DENTRO DE UM BLOCO, SÓ PODERÁ SER UTILIZADA DENTRO DO BLOCO
-  - shadowing: permite que duas variáveis tenha o mesmo nome, sendo uma local e outra local -> no bloco em que a variável é declarada prevalece a local
+  - shadowing: permite que duas variáveis tenha o mesmo nome, sendo uma local e outra global -> no bloco em que a variável é declarada prevalece a local
 
 -> Módulo de Variáveis: externalizar as variáveis em um arquivo
   - criar as variáveis em um documento separada e utilizar o @import
